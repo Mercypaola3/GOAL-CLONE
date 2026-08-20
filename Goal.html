@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal.com Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+     <script> 
+        tailwind.config ={
+            theme:{
+                extend:{
+                    colors:{
+                        goal:{
+                            green: '#00b140',
+                            white: '#ffffff',
+                            // darkgreen: '#009136',
+                            card: '#222238',
+                            gray: '#8a8a9e',
+                            border: '#33334d',
+                            dark: '#1a1a2e',
+                            darker: '#121220',
+                        }
+                    }
+                }
+            }
+        }
+    </script> 
+</head>
+<body class="bg-zinc-900 text-white font-body">
+    <!-- Header -->
+<header class="bg-black text-white">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+             <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+            <!-- Logo -->
+             <div class="bg-zinc-900 border-4 border-zinc-900 px-4 py-2">
+            <a href="#" class="flex items-center">
+                <div class="bg-black border border-gray-300 px-4 py-2 ">
+                    <span class="text-3xl font-extrabold">GOAL</span>
+                    <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
+                    
+                </div>
+            </div>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 font-semibold uppercase text-sm">
+                <a href="#" class="px-3 py-2 text-sm font-medium text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            SCORES <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                            <div class="relative group">
+                        <a href="latest-news.html" class="px-3 py-2 text-sm font-medium text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            LATEST <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="#" class="px-3 py-2 text-sm font-medium text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            COMPETITIONS <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>               
+
+                <a href="#" class="hover:text-green-500">Newsletters</a>
+                <a href="#" class="hover:text-green-500">Indivisa</a>
+                <a href="#" class="hover:text-green-500">GoalStudio</a>
+                <a href="#" class="hover:text-green-500">Shop</a>
+            </nav>
+
+            <!-- Right Section -->
+            <div class="flex items-center gap-3">
+                <!-- User Icon -->
+                <button class="hover:text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-7 h-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5.121 17.804A9 9 0 1118.879 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </button>
+
+                <a href="#" class="font-semibold hover:text-green-500">
+                    Log in
+                </a>
+
+                <!-- Mobile Menu -->
+                <button class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-7 h-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Advertisement Bar -->
+    <div class="bg-zinc-700 text-center py-2 text-gray-400 text-sm">
+        Advertisement
+    </div>
+</header>
+            
+        
+    
+</body>
+</html>
