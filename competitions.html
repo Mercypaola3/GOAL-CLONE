@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal.com Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+     <script> 
+        tailwind.config ={
+            theme:{
+                extend:{
+                    colors:{
+                        goal:{
+                            green: '#00b140',
+                            white: '#ffffff',
+                            card: '#222238',
+                            gray: '#8a8a9e',
+                            border: '#33334d',
+                            dark: '#1a1a2e',
+                            darker: '#121220',
+                        }
+                    }
+                }
+            }
+        }
+    </script> 
+</head>
+<body class="bg-zinc-900 text-white font-body">
+    <!-- Header -->
+    <header class="bg-black text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-30 px-7">
+                <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                <!-- Logo -->
+                <div class="bg-zinc-700 border-4 border-zinc-700 px-4 py-2">
+                <a href="Goal.html" class="flex items-center">
+                    <div class="bg-black border- border-gray-300 px-4 py-2 ">
+                        <span class="text-3xl font-extrabold hover:text-green-500">GOAL</span>
+                        <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
+                        
+                    </div>
+                </div>
+                </a>
+
+            <!-- Navigation -->
+            <nav class="hidden lg:flex items-center space-x-9 font-semibold uppercase text-sm">
+                <a href="score.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            SCORES <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                            <div class="relative group">
+                        <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            LATEST <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="competitions.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            COMPETITIONS <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>               
+
+                <a href="Newsletters.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Newsletters</a>
+                <a href="Indivisa.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Indivisa</a>
+                <a href="GoalStudio.html" class="hover:text-green-500 px-3 py-2 text-base  font-extrabold text-goal-white  transition">GoalStudio</a>
+                <a href="Shop.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Shop</a>
+            </nav>
+
+            <!-- Right Actions -->
+                <div class="flex items-center gap-3">
+                    <button onclick="searchBtn('')" class="text-goal-gray-500 hover:text-green-500 transition text-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar (hidden by default) -->
+        <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-search text-goal-gray"></i>
+                    <input type="text" placeholder="Search for news, players, teams..." class="bg-transparent flex-1 text-white placeholder-goal-gray outline-none text-sm">
+                    <button class="text-goal-gray hover:text-white"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    
+</body>
+</html>

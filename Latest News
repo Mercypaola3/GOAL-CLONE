@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal.com Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+     <script> 
+        tailwind.config ={
+            theme:{
+                extend:{
+                    colors:{
+                        goal:{
+                            green: '#00b140',
+                            white: '#ffffff',
+                            card: '#222238',
+                            gray: '#8a8a9e',
+                            border: '#33334d',
+                            dark: '#1a1a2e',
+                            darker: '#121220',
+                        }
+                    }
+                }
+            }
+        }
+    </script> 
+</head>
+<body class="bg-zinc-900 text-white font-body">
+    <!-- Header -->
+    <header class="bg-black text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-30 px-7">
+                <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                <!-- Logo -->
+                <div class="bg-zinc-700 border-4 border-zinc-700 px-4 py-2">
+                <a href="Goal.html" class="flex items-center">
+                    <div class="bg-black border- border-gray-300 px-4 py-2 ">
+                        <span class="text-3xl font-extrabold hover:text-green-500">GOAL</span>
+                        <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
+                        
+                    </div>
+                </div>
+                </a>
+
+            <!-- Navigation -->
+            <nav class="hidden lg:flex items-center space-x-9 font-semibold uppercase text-sm">
+                <a href="score.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            SCORES <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                            <div class="relative group">
+                        <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            LATEST <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="competitions.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            COMPETITIONS <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>               
+
+                <a href="Newsletters.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Newsletters</a>
+                <a href="Indivisa.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Indivisa</a>
+                <a href="GoalStudio.html" class="hover:text-green-500 px-3 py-2 text-base  font-extrabold text-goal-white  transition">GoalStudio</a>
+                <a href="Shop.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Shop</a>
+            </nav>
+
+            <!-- Right Actions -->
+                <div class="flex items-center gap-3">
+                    <button onclick="searchBtn('')" class="text-goal-gray-500 hover:text-green-500 transition text-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar (hidden by default) -->
+        <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-search text-goal-gray"></i>
+                    <input type="text" placeholder="Search for news, players, teams..." class="bg-transparent flex-1 text-white placeholder-goal-gray outline-none text-sm">
+                    <button class="text-goal-gray hover:text-white"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </header> 
+    
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+
+        <!-- Page Title -->
+        <div class="mb-6">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">Latest News</h1>
+            <p class="text-goal-gray text-sm">Stay updated with the latest football news from around the world</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="mb-6 overflow-x-auto scrollbar-hide">
+            <div class="flex items-center gap-2 pb-2">
+                <button class="filter-btn active whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-green text-white transition" data-filter="all">All</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="transfers">Transfers</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="premier-league">Premier League</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="la-liga">La Liga</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="serie-a">Serie A</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="champions-league">Champions League</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="opinion">Opinion</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="analysis">Analysis</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium bg-goal-card text-goal-gray hover:text-white transition" data-filter="womens">Women's Football</button>
+            </div>
+        </div>
+
+        <!-- News Articles Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="newsGrid">
+
+            <!-- Article 1 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="transfers">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/silva-real-madrid.png" alt="Real Madrid" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Transfers</span>
+                            <span class="text-goal-gray text-xs">Real Madrid</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">'I had no doubts!' - Silva reveals TRUTH behind Real Madrid transfer</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">Bernardo Silva has opened up about his decision to leave Manchester City and join Real Madrid, revealing the conversations that led to his move.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>21 minutes ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="premier-league">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image9a.jpg" alt="Community Shield" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Opinion</span>
+                            <span class="text-goal-gray text-xs">Manchester City</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Maresca facing HUGE task at City after Community Shield trouncing</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">The new manager has a host of issues to address after a humiliating afternoon at the Principality Stadium that saw the Premier League champions run riot.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>1 hour ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="analysis">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image5a.jpg" alt="Arsenal Preview" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Analysis</span>
+                            <span class="text-goal-gray text-xs">Arsenal</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Arsenal season preview: Gunners will run away with EPL title</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">After finally getting over the line last season, the Gunners appear almost perfectly placed to retain their domestic crown.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="premier-league">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/baleba-manutd.jpg" alt="Baleba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Opinion</span>
+                            <span class="text-goal-gray text-xs">Manchester United</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Bargain buy?! Why Carlos Baleba is exactly what Man Utd need</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">The Red Devils are reportedly closing in on a deal for the Brighton and Cameroon star, which would be a very shrewd piece of business.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>3 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="la-liga">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image8a.jpg" alt="Pre-season" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Analysis</span>
+                            <span class="text-goal-gray text-xs">Premier League</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Winners & Losers of the Premier League's pre-season</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">One should always be wary of reading too much into friendlies but it's clear that some clubs are in better shape than others ahead of the big kick-off.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>4 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="transfers">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image7a.jpg" alt="Reijnders" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Opinion</span>
+                            <span class="text-goal-gray text-xs">Inter</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Reijnders' top-level career likely already over after SPL switch</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">For some football fans, the summer is the part of the calendar that they look forward to the most - and that's not just because it's filled by a World Cup every four years!</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>5 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="champions-league">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image6a.jpg" alt="Golden Boot" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Opinion</span>
+                            <span class="text-goal-gray text-xs">Premier League</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Haaland, Isak & top 10 candidates to win PL Golden Boot - ranked</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">With the 2026-27 Premier League campaign about to get underway, GOAL counts down the leading contenders for the Golden Boot.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>6 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="analysis">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/image3a.jpg" alt="AI Soccer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Features</span>
+                            <span class="text-goal-gray text-xs">Analysis</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">From Salah replacements to tactics: How AI is changing soccer</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">AI can identify Mohamed Salah replacements, map injuries and project youth development. GOAL examines how soccer is using the technology.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>7 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 9 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="opinion">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/imagw2a.jpg" alt="Messi Ownership" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Analysis</span>
+                            <span class="text-goal-gray text-xs">L. Messi</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">How football's biggest stars are turning to club ownership models</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">Investing in clubs has become something of a craze among top players in recent years as the game has undergone a commercial revolution.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>8 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 10 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="premier-league">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/haji-wright.jpg" alt="Haji Wright" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Analysis</span>
+                            <span class="text-goal-gray text-xs">H. Wright</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">'We believe in him' - Lampard on Haji Wright's Prem leap</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">In an exclusive interview with GOAL, Frank Lampard explains why he believes Haji Wright is ready to make the Premier League leap with Coventry City.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>9 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 11 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="serie-a">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/wharton-liverpool.jpg" alt="Liverpool" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Transfers</span>
+                            <span class="text-goal-gray text-xs">Liverpool</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">Future Liverpool star? Reds legend a 'big fan' of Wharton</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">Liverpool are reportedly keeping tabs on Crystal Palace midfielder Adam Wharton as they look to strengthen their squad ahead of the new season.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>10 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 12 -->
+            <article class="news-card bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition" data-category="womens">
+                <a href="article-details.html" class="block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="image/CMR woman.avif" alt="Nigeria" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-goal-green text-xs font-bold uppercase">Women's Football</span>
+                            <span class="text-goal-gray text-xs">CAMEROON</span>
+                        </div>
+                        <h3 class="font-bold text-base leading-snug group-hover:text-goal-green transition line-clamp-2 mb-2">the narrative took an inspiring, historic turn under newly appointed head coach Valentine Nguele.</h3>
+                        <p class="text-xs text-goal-gray line-clamp-2 mb-3">The Indomitable Lionesses appointed former national team goalkeeper Valentine Nguele as head coach. Under her leadership, Cameroon successfully rebounded to win the WAFCON 2026 title and secured qualification for the 2027 FIFA Women's World Cup in Brazil.</p>
+                        <div class="flex items-center gap-2 text-xs text-goal-gray">
+                            <i class="far fa-clock"></i>
+                            <span>11 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+
+        <!-- Load More Button -->
+        <div class="flex justify-center mt-8">
+            <button class="bg-goal-green hover:bg-goal-darkgreen text-white font-bold py-3 px-8 rounded-lg transition">
+                Load More News
+            </button>
+        </div>
+
+    </main>
+
+<!-- Footer -->
+    <footer class="bg-goal-dark border-t border-goal-border">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-8">
+                <!-- Logo Column -->
+                <div class="col-span-2 md:col-span-4 lg:col-span-1">
+                    <svg viewBox="0 0 100 30" class="h-7 w-auto mb-4" fill="none">
+                        <rect width="100" height="30" rx="4" fill="#00b140"/>
+                        <text x="50" y="22" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Inter, sans-serif">GOAL</text>
+                    </svg>
+                    <p class="text-sm text-goal-gray mb-4">The latest football news, live scores, results, rumours, transfers, fixtures, tables and player profiles from around the world.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-8 h-8 bg-goal-card rounded-full flex items-center justify-center text-goal-gray hover:text-white hover:bg-goal-green transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 bg-goal-card rounded-full flex items-center justify-center text-goal-gray hover:text-white hover:bg-goal-green transition"><i class="fab fa-x-twitter text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 bg-goal-card rounded-full flex items-center justify-center text-goal-gray hover:text-white hover:bg-goal-green transition"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 bg-goal-card rounded-full flex items-center justify-center text-goal-gray hover:text-white hover:bg-goal-green transition"><i class="fab fa-tiktok text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 bg-goal-card rounded-full flex items-center justify-center text-goal-gray hover:text-white hover:bg-goal-green transition"><i class="fab fa-youtube text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Leagues -->
+                <div>
+                    <h4 class="font-bold text-sm mb-3 text-white">Leagues</h4>
+                    <ul class="space-y-2 text-sm text-goal-gray">
+                        <li><a href="#" class="hover:text-goal-green transition">Premier League</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">La Liga</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Serie A</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Bundesliga</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Ligue 1</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Champions League</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Europa League</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">MLS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Clubs -->
+                <div>
+                    <h4 class="font-bold text-sm mb-3 text-white">Clubs</h4>
+                    <ul class="space-y-2 text-sm text-goal-gray">
+                        <li><a href="#" class="hover:text-goal-green transition">Manchester United</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Liverpool</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Arsenal</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Real Madrid</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Barcelona</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Chelsea</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">PSG</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Bayern Munich</a></li>
+                    </ul>
+                </div>
+
+                <!-- Players -->
+                <div>
+                    <h4 class="font-bold text-sm mb-3 text-white">Players</h4>
+                    <ul class="space-y-2 text-sm text-goal-gray">
+                        <li><a href="#" class="hover:text-goal-green transition">Cristiano Ronaldo</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Lionel Messi</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Kylian Mbappe</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Erling Haaland</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Lamine Yamal</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Jude Bellingham</a></li>
+                    </ul>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h4 class="font-bold text-base mb-3 text-white">About GOAL</h4>
+                    <ul class="space-y-2 text-sm text-goal-gray">
+                        <li><a href="#" class="hover:text-goal-green transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-goal-green transition">Advertise</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-goal-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-goal-gray"> Copyright &copy; 2026 GOAL by MERCY TECH. All rights reserved. This is a MY project.</p>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-goal-gray">Available on:</span>
+                    <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
+                        <i class="fab fa-apple"></i> App Store & Play Store
+                    </a>
+                    <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+</body>
+</html>
+
+    
