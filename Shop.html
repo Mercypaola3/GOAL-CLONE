@@ -66,10 +66,19 @@
             </nav>
 
             <!-- Right Actions -->
-                <div class="flex items-center gap-3">
-                    <button onclick="searchBtn('')" class="text-goal-gray-500 hover:text-green-500 transition text-lg">
-                        <i class="fas fa-search"></i>
-                    </button>
+                <!-- Search -->
+            <div class="p-6 border-b border-gray-800">
+
+                <div class="flex items-center justify-between">
+
+                    <div class="w-[330px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
+                        <i class="fas fa-search text-gray-400"></i>
+                        <input
+                            type="text"
+                            placeholder="Search for matches"
+                            class="bg-transparent outline-none text-white w-full">
+                    </div>
+                    <!-- login -->
                     <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
                         <i class="fas fa-user"></i>
                         <span>user-logi</span>
