@@ -33,9 +33,9 @@
         <div class="container mx-auto px-0">
             <div class="flex items-center justify-between h-30">
                 <!-- Logo -->
-                <div class="bg-zinc-700 border-4 border-zinc-700 px-4 py-2">
+                <div class="bg-zinc-700 border-4 border-zinc-700 px-6 py-3">
                 <a href="Goal.html" class="flex items-center">
-                    <div class="bg-black border- border-gray-300 px-4 py-2 ">
+                    <div class="bg-black border- border-gray-300 px-6 py-5 ">
                         <span class="text-3xl font-extrabold hover:text-green-500">GOAL</span>
                         <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
                         
@@ -43,7 +43,7 @@
                 </div>
                 </a>
 
-            <!-- Navigation -->
+            <!--Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x- font-semibold uppercase text-sm">
                 <div class="relative group">
 
@@ -330,8 +330,9 @@
 </div>  
         <!-- LATEST NEWS -->
         <div class="relative group">
-            <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
-                    LATEST <i class="fas fa-chevron-down text-[10px]"></i>        
+            <a href="Latest News.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                    LATEST <i class="fas fa-chevron-down text-[10px]"></i>
+
                 <!-- MEGA MENU -->
                 <div class="absolute top-full left-[-300px] w-screen bg-[#2f2f2f] opacity-0 invisible group-hover:opacity-100
                             group-hover:visible
@@ -637,7 +638,7 @@
 
                 <div class="flex items-center justify-between">
 
-                    <div class="w-[330px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
+                    <div class="w-[200px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
                         <i class="fas fa-search text-gray-400"></i>
                         <input
                             type="text"
@@ -648,10 +649,95 @@
                         <i class="fas fa-user"></i>
                         <span >login</span>
                     </button>
-                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                                <!-- Mobile Menu Button -->
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden text-white text-2xl"
+                    >
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <!-- Mobile Navigation -->
+                    <div
+                        id="mobileMenu"
+                        class="fixed top-0 left-[-100%] w-72 h-screen bg-goal-darker text-white z-50 transition-all duration-300 overflow-y-auto"
+                    >
+                        <!-- Header -->
+                        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                            <h2 class="text-xl font-bold">MENU</h2>
+
+                            <button id="closeMenuBtn" class="text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <nav class="flex flex-col">
+
+                            <a href="Goal.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                goal
+                            </a>
+
+                            <a href="Score.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Scores
+                            </a>
+
+                            <a href="Latest News.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Latest News
+                            </a>
+
+                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                competition
+                            </a>
+
+                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800">
+                                Newsletters
+                            </a>
+
+                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800">
+                                indivisa
+                            </a>
+
+                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800">
+                                goalstudio
+                            </a>
+
+                            <a href="Shop.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Shop
+                            </a>
+
+                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                article-detail
+                            </a>
+
+                            </nav>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div
+                        id="overlay"
+                        class="fixed inset-0 bg-black/50 hidden z-40"
+                    ></div>
+
+                    <script>
+                        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                        const closeMenuBtn = document.getElementById("closeMenuBtn");
+                        const mobileMenu = document.getElementById("mobileMenu");
+                        const overlay = document.getElementById("overlay");
+
+                        mobileMenuBtn.addEventListener("click", () => {
+                            mobileMenu.style.left = "0";
+                            overlay.classList.remove("hidden");
+                        });
+
+                        closeMenuBtn.addEventListener("click", closeMenu);
+                        overlay.addEventListener("click", closeMenu);
+
+                        function closeMenu() {
+                            mobileMenu.style.left = "-100%";
+                            overlay.classList.add("hidden");
+                        }
+                    </script>
                 </div>
             </div>
         </div>
@@ -914,61 +1000,101 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Video 1 -->
-                <a href="article-details.html" class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="https://assets.goal.com/images/v3/bltd3e8f5ee7e071bbc/maxresdefault.jpg?auto=webp&format=pjpg" alt="Danny Aarons" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
-                                <i class="fas fa-play text-white text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-goal-green text-xs font-bold uppercase">Exclusive</span>
-                            <span class="text-goal-gray text-xs"><i class="fas fa-circle text-[4px] align-middle mx-1"></i>Arsenal</span>
-                        </div>
-                        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">Danny Aarons on gaming, his YouTube empire & Spurs</h3>
-                    </div>
-                </a>
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID"
+   target="_blank"
+   class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
+
+    <div class="aspect-video overflow-hidden relative">
+        <img src="https://assets.goal.com/images/v3/bltd3e8f5ee7e071bbc/maxresdefault.jpg?auto=webp&format=pjpg"
+             alt="Danny Aarons"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                <i class="fas fa-play text-white text-sm ml-0.5"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+            <span class="text-goal-green text-xs font-bold uppercase">Exclusive</span>
+            <span class="text-goal-gray text-xs">
+                <i class="fas fa-circle text-[4px] align-middle mx-1"></i>
+                Arsenal
+            </span>
+        </div>
+
+        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">
+            Danny Aarons on gaming, his YouTube empire & Spurs
+        </h3>
+    </div>
+</a>
 
                 <!-- Video 2 -->
-                <a href="article-details.html" class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="https://assets.goal.com/images/v3/blt9d14c124c3b611a0/FC260527MUND_MundialFilmsNoEraPenal_HIC_Web-16-9.jpg?auto=webp&format=pjpg" alt="No Era Penal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
-                                <i class="fas fa-play text-white text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-goal-green text-xs font-bold uppercase">Culture</span>
-                            <span class="text-goal-gray text-xs"><i class="fas fa-circle text-[4px] align-middle mx-1"></i>MUNDIAL</span>
-                        </div>
-                        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">No Era Penal - a MUNDIAL film</h3>
-                    </div>
-                </a>
+<a href="https://www.youtube.com/watch?v=VIDEO_ID"
+   target="_blank"
+   class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
+
+    <div class="aspect-video overflow-hidden relative">
+        <img src="https://assets.goal.com/images/v3/blt9d14c124c3b611a0/FC260527MUND_MundialFilmsNoEraPenal_HIC_Web-16-9.jpg?auto=webp&format=pjpg"
+             alt="No Era Penal"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                <i class="fas fa-play text-white text-sm ml-0.5"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+            <span class="text-goal-green text-xs font-bold uppercase">Culture</span>
+            <span class="text-goal-gray text-xs">
+                <i class="fas fa-circle text-[4px] align-middle mx-1"></i>
+                MUNDIAL
+            </span>
+        </div>
+
+        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">
+            No Era Penal - a MUNDIAL film
+        </h3>
+    </div>
+</a>
 
                 <!-- Video 3 -->
-                <a href="article-details.html" class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="https://assets.goal.com/images/v3/bltf9b82b2bed828914/BMO.jpg?auto=webp&format=pjpg" alt="David James" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
-                                <i class="fas fa-play text-white text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-goal-green text-xs font-bold uppercase">Exclusive</span>
-                            <span class="text-goal-gray text-xs"><i class="fas fa-circle text-[4px] align-middle mx-1"></i>D. James</span>
-                        </div>
-                        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">David James on England, Liverpool, Alisson & more</h3>
-                    </div>
-                </a>
+<a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
+
+    <div class="aspect-video overflow-hidden relative">
+        <img src="https://assets.goal.com/images/v3/bltf9b82b2bed828914/BMO.jpg?auto=webp&format=pjpg"
+             alt="David James"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-12 h-12 bg-goal-green/90 rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                <i class="fas fa-play text-white text-sm ml-0.5"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+            <span class="text-goal-green text-xs font-bold uppercase">Exclusive</span>
+            <span class="text-goal-gray text-xs">
+                <i class="fas fa-circle text-[4px] align-middle mx-1"></i>
+                D. James
+            </span>
+        </div>
+
+        <h3 class="font-bold text-sm leading-snug group-hover:text-goal-green transition line-clamp-2">
+            David James on England, Liverpool, Alisson & more
+        </h3>
+    </div>
+</a>
             </div>
         </section>
    </main>
@@ -1055,10 +1181,10 @@
                 <div class="flex items-center gap-2">
                     <span class="text-xs text-goal-gray">Available on:</span>
                     <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
-                        <i class="fab fa-apple"></i> App Store & Play Store
+                        <i class="fa-brands fa-windows"></i>Window DeskTop
                     </a>
                     <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
-                        <i class="fab fa-google-play"></i> Google Play
+                        <i class="fab fa-google-play"></i> chrome browser
                     </a>
                 </div>
             </div>

@@ -49,7 +49,7 @@
                             SCORES <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                             <div class="relative group">
-                        <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                        <a href="Latest News.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
                             LATEST <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                     </div>
@@ -81,16 +81,104 @@
                     <!-- login -->
                     <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
                         <i class="fas fa-user"></i>
-                        <span>user-login</span>
+                        <span>login</span>
                     </button>
                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden text-white text-2xl"
+                    >
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <!-- Mobile Navigation -->
+                    <div
+                        id="mobileMenu"
+                        class="fixed top-0 left-[-100%] w-72 h-screen bg-goal-darker text-white z-50 transition-all duration-300 overflow-y-auto"
+                    >
+                        <!-- Header -->
+                        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                            <h2 class="text-xl font-bold">MENU</h2>
+
+                            <button id="closeMenuBtn" class="text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <nav class="flex flex-col">
+
+                            <a href="Goal.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                goal
+                            </a>
+
+                            <a href="Score.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Scores
+                            </a>
+
+                            <a href="Latest News.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Latest News
+                            </a>
+
+                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                competition
+                            </a>
+
+                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800">
+                                Newsletters
+                            </a>
+
+                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800">
+                                indivisa
+                            </a>
+
+                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800">
+                                goalstudio
+                            </a>
+
+                            <a href="Shop.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Shop
+                            </a>
+
+                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                article-detail
+                            </a>
+
+                            </nav>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div
+                        id="overlay"
+                        class="fixed inset-0 bg-black/50 hidden z-40"
+                    ></div>
+
+                    
                 </div>
             </div>
         </div>
+                </div>
+            </div>
+        </div>
+<script>
+                        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                        const closeMenuBtn = document.getElementById("closeMenuBtn");
+                        const mobileMenu = document.getElementById("mobileMenu");
+                        const overlay = document.getElementById("overlay");
 
+                        mobileMenuBtn.addEventListener("click", () => {
+                            mobileMenu.style.left = "0";
+                            overlay.classList.remove("hidden");
+                        });
+
+                        closeMenuBtn.addEventListener("click", closeMenu);
+                        overlay.addEventListener("click", closeMenu);
+
+                        function closeMenu() {
+                            mobileMenu.style.left = "-100%";
+                            overlay.classList.add("hidden");
+                        }
+                    </script>
         <!-- Search Bar (hidden by default) -->
         <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
             <div class="max-w-7xl mx-auto px-4 py-3">

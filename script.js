@@ -1,16 +1,19 @@
-const searchBar = document.getElementById('searchBar');
-const searchInput = searchBar.querySelector('input');
-const closeBtn = searchBar.querySelector('button');
 
-// 1. Listen for typing events
-searchInput.addEventListener('input', (e) => {
-    const query = e.target.value;
-    console.log("Searching for:", query);
-    // Add your live-search filtering logic here
-});
+                        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                        const closeMenuBtn = document.getElementById("closeMenuBtn");
+                        const mobileMenu = document.getElementById("mobileMenu");
+                        const overlay = document.getElementById("overlay");
 
-// 2. Close search bar when clicking the "X" button
-closeBtn.addEventListener('click', () => {
-    searchBar.classList.add('hidden');
-    searchInput.value = ''; // Clear input on close
-});
+                        mobileMenuBtn.addEventListener("click", () => {
+                            mobileMenu.style.left = "0";
+                            overlay.classList.remove("hidden");
+                        });
+
+                        closeMenuBtn.addEventListener("click", closeMenu);
+                        overlay.addEventListener("click", closeMenu);
+
+                        function closeMenu() {
+                            mobileMenu.style.left = "-100%";
+                            overlay.classList.add("hidden");
+                        }
+                    

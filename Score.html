@@ -35,7 +35,7 @@
                 <!-- Logo -->
                 <div class="bg-zinc-700 border-4 border-zinc-700 px-4 py-2">
                 <a href="Goal.html" class="flex items-center">
-                    <div class="bg-black border- border-gray-300 px-4 py-2 ">
+                    <div class="bg-black border- border-gray-300 px-6 py-5 ">
                         <span class="text-3xl font-extrabold hover:text-green-500">GOAL</span>
                         <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
                         
@@ -43,28 +43,162 @@
                 </div>
                 </a>
 
-            <!-- Navigation -->
+            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-9 font-semibold uppercase text-sm">
-                <div class="relative group">
+                <a href="score.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            SCORES <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                            <div class="relative group">
+                        <a href="Latest News.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            LATEST <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <a href="competitions.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                            COMPETITIONS <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                    </div>               
 
-    <a href="score.html"
-       class="px-3 py-2 text-base font-extrabold text-white hover:text-green-500 flex items-center gap-1">
-        SCORES
-        <i class="fas fa-chevron-down text-[10px]"></i>
-    </a>
+                <a href="Newsletters.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Newsletters</a>
+                <a href="Indivisa.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Indivisa</a>
+                <a href="GoalStudio.html" class="hover:text-green-500 px-3 py-2 text-base  font-extrabold text-goal-white  transition">GoalStudio</a>
+                <a href="Shop.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Shop</a>
+            </nav>
 
-    <!-- SCORES MEGA MENU -->
-    <div class="absolute left-0 top-full
-                w-screen
-                bg-[#0d0d0d]
-                opacity-0 invisible
-                group-hover:opacity-100
-                group-hover:visible
-                transition-all duration-300
-                z-50">
+            <!-- Right Actions -->
+                <!-- Search -->
+            <div class="p-6 border-b border-gray-800">
 
-        <div class="max-h-[85vh] overflow-y-auto">
+                <div class="flex items-center justify-between">
 
+                    <div class="w-[200px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
+                        <i class="fas fa-search text-gray-400"></i>
+                        <input
+                            type="text"
+                            placeholder="Search for matches"
+                            class="bg-transparent outline-none text-white w-full">
+                    </div>
+                    <!-- login -->
+                    <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
+                        <i class="fas fa-user"></i>
+                        <span>login</span>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden text-white text-2xl"
+                    >
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Mobile Navigation -->
+                    <div
+                        id="mobileMenu"
+                        class="fixed top-0 left-[-100%] w-72 h-screen bg-goal-darker text-white z-50 transition-all duration-300 overflow-y-auto"
+                    >
+                        <!-- Header -->
+                        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                            <h2 class="text-xl font-bold">MENU</h2>
+
+                            <button id="closeMenuBtn" class="text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Mobile Navigation  -->
+                        <nav class="flex flex-col">
+
+                            <a href="Goal.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                goal
+                            </a>
+
+                            <a href="Score.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                Scores
+                            </a>
+
+                            <a href="Latest News.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                Latest News
+                            </a>
+
+                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                competition
+                            </a>
+
+                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800">
+                                Newsletters
+                            </a>
+
+                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800">
+                                indivisa
+                            </a>
+
+                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800">
+                                goalstudio
+                            </a>
+
+                            <a href="Shop.html" class="px-5 py-4 border-b uppercase border-gray-700 hover:bg-gray-800">
+                                Shop
+                            </a>
+
+                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                article-detail
+                            </a>
+
+                            </nav>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div
+                        id="overlay"
+                        class="fixed inset-0 bg-black/50 hidden z-40"
+                    ></div>
+
+                    
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+<script>
+                        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                        const closeMenuBtn = document.getElementById("closeMenuBtn");
+                        const mobileMenu = document.getElementById("mobileMenu");
+                        const overlay = document.getElementById("overlay");
+
+                        mobileMenuBtn.addEventListener("click", () => {
+                            mobileMenu.style.left = "0";
+                            overlay.classList.remove("hidden");
+                        });
+
+                        closeMenuBtn.addEventListener("click", closeMenu);
+                        overlay.addEventListener("click", closeMenu);
+
+                        function closeMenu() {
+                            mobileMenu.style.left = "-100%";
+                            overlay.classList.add("hidden");
+                        }
+                    </script>
+        <!-- Search Bar (hidden by default) -->
+        <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-search text-goal-gray"></i>
+                    <input type="text" placeholder="Search for news, players, teams..." class="bg-transparent flex-1 text-white placeholder-goal-gray outline-none text-sm">
+                    <button class="text-goal-gray hover:text-white"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+
+        <!-- Page Title -->
+        <div class="mb-6">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2 uppercase ">score</h1>
+            <p class="text-goal-gray text-sm">Live Football Scores, Fixtures & Results</p>
+        </div>
             <!-- Search -->
             <div class="p-6 border-b border-gray-800">
 
@@ -115,16 +249,15 @@
                     <p class="text-gray-400">Aug</p>
                 </div>
 
+                <div class="py-4 bg-[#1b1b1b]">
+                    <p class="text-white text-sm">Tue</p>
+                    <h3 class="text-3xl font-bold text-white">25</h3>
+                    <p class="text-gray-400">Aug</p>
+                </div>
                 <div class="py-4 bg-white text-black">
                     <p class="text-sm">Today</p>
-                    <h3 class="text-3xl font-bold">25</h3>
+                    <h3 class="text-3xl font-bold">26</h3>
                     <p>Aug</p>
-                </div>
-
-                <div class="py-4 bg-[#1b1b1b]">
-                    <p class="text-white text-sm">Wed</p>
-                    <h3 class="text-3xl font-bold text-white">26</h3>
-                    <p class="text-gray-400">Aug</p>
                 </div>
 
                 <div class="py-4 bg-[#1b1b1b]">
@@ -329,60 +462,9 @@
     </div>
 
 </div>
-                            <div class="relative group">
-                        <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
-                            LATEST <i class="fas fa-chevron-down text-[10px]"></i>
-                        </a>
-                    </div>
-                    <div class="relative group">
-                        <a href="competitions.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
-                            COMPETITIONS <i class="fas fa-chevron-down text-[10px]"></i>
-                        </a>
-                    </div>               
+    </main>
+    
 
-                <a href="Newsletters.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Newsletters</a>
-                <a href="Indivisa.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Indivisa</a>
-                <a href="GoalStudio.html" class="hover:text-green-500 px-3 py-2 text-base  font-extrabold text-goal-white  transition">GoalStudio</a>
-                <a href="Shop.html" class="hover:text-green-500 px-3 py-2 text-base font-extrabold text-goal-white  transition">Shop</a>
-            </nav>
-
-            <!-- Right Actions -->
-                <!-- Search -->
-            <div class="p-6 border-b border-gray-800">
-
-                <div class="flex items-center justify-between">
-
-                    <div class="w-[330px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
-                        <i class="fas fa-search text-gray-400"></i>
-                        <input
-                            type="text"
-                            placeholder="Search for matches"
-                            class="bg-transparent outline-none text-white w-full">
-                    </div>
-                    <!-- login -->
-                    <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
-                        <i class="fas fa-user"></i>
-                        <span>user-login</span>
-                    </button>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Search Bar (hidden by default) -->
-        <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
-            <div class="max-w-7xl mx-auto px-4 py-3">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-search text-goal-gray"></i>
-                    <input type="text" placeholder="Search for news, players, teams..." class="bg-transparent flex-1 text-white placeholder-goal-gray outline-none text-sm">
-                    <button class="text-goal-gray hover:text-white"><i class="fas fa-times"></i></button>
-                </div>
-            </div>
-        </div>
-    </header>
     <a href="article-details.html" class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition"></a>
 
 </body>

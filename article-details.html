@@ -33,9 +33,9 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-30 px-7">           
                 <!-- Logo -->
-                <div class="bg-zinc-700 border-4 border-zinc-700 px-4 py-2">
+                <div class="bg-zinc-700 border-4 border-zinc-700 px-6 py-3">
                 <a href="Goal.html" class="flex items-center">
-                    <div class="bg-black border- border-gray-300 px-4 py-2 ">
+                    <div class="bg-black border- border-gray-300 px-6 py-5 ">
                         <span class="text-3xl font-extrabold hover:text-green-500">GOAL</span>
                         <span class="text-white-500 text-3xl font-extrabold absolute top-0">•</span>
                         
@@ -49,7 +49,7 @@
                             SCORES <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                             <div class="relative group">
-                        <a href="Latest News" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
+                        <a href="Latest News.html" class="px-3 py-2 text-base font-extrabold text-goal-white hover:text-green-500 transition flex items-center gap-1">
                             LATEST <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                     </div>
@@ -71,7 +71,7 @@
 
                 <div class="flex items-center justify-between">
 
-                    <div class="w-[330px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
+                    <div class="w-[200px] bg-[#1f1f1f] rounded-full px-5 py-3 flex items-center gap-3">
                         <i class="fas fa-search text-gray-400"></i>
                         <input
                             type="text"
@@ -81,15 +81,104 @@
                     <!-- login -->
                     <button class="text-goal-gray-500 hover:text-green-500 transition text-lg">
                         <i class="fas fa-user"></i>
-                     <span>user-login</span>
+                     <span>login</span>
                     </button>
                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl mr-3">
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden text-white text-2xl"
+                    >
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <!-- Mobile Navigation -->
+                    <div
+                        id="mobileMenu"
+                        class="fixed top-0 left-[-100%] w-72 h-screen bg-goal-darker text-white z-50 transition-all duration-300 overflow-y-auto"
+                    >
+                        <!-- Header -->
+                        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                            <h2 class="text-xl font-bold">MENU</h2>
+
+                            <button id="closeMenuBtn" class="text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <nav class="flex flex-col">
+
+                            <a href="Goal.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                goal
+                            </a>
+
+                            <a href="Score.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Scores
+                            </a>
+
+                            <a href="Latest News.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Latest News
+                            </a>
+
+                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                competition
+                            </a>
+
+                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800">
+                                Newsletters
+                            </a>
+
+                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800">
+                                indivisa
+                            </a>
+
+                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800">
+                                goalstudio
+                            </a>
+
+                            <a href="Shop.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                                Shop
+                            </a>
+
+                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                                article-detail
+                            </a>
+
+                            </nav>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div
+                        id="overlay"
+                        class="fixed inset-0 bg-black/50 hidden z-40"
+                    ></div>
+
+                    
                 </div>
             </div>
         </div>
+                </div>
+            </div>
+        </div>
+        <script>
+                        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                        const closeMenuBtn = document.getElementById("closeMenuBtn");
+                        const mobileMenu = document.getElementById("mobileMenu");
+                        const overlay = document.getElementById("overlay");
+
+                        mobileMenuBtn.addEventListener("click", () => {
+                            mobileMenu.style.left = "0";
+                            overlay.classList.remove("hidden");
+                        });
+
+                        closeMenuBtn.addEventListener("click", closeMenu);
+                        overlay.addEventListener("click", closeMenu);
+
+                        function closeMenu() {
+                            mobileMenu.style.left = "-100%";
+                            overlay.classList.add("hidden");
+                        }
+                    </script>
 
         <!-- Search Bar (hidden by default) -->
         <div id="searchBar" class="hidden bg-goal-darker border-t border-goal-border">
@@ -165,46 +254,22 @@
                         <strong>Kylian Mbappe's stunning decision to part ways with Nike</strong> has sent shockwaves through the football world, marking what many industry experts believe could be a seismic shift in how boot deals are structured and negotiated.
                     </p>
 
-                    <p>
-                        The French superstar, who has been with the American sportswear giant since he was a teenager, reportedly turned down a contract extension worth more than $100 million over six years. Instead, Mbappe is believed to be exploring options with other brands, with Adidas and Puma both heavily linked.
-                    </p>
-
-                    <p>
-                        What makes this split particularly significant is the timing. Mbappe's decision comes at a moment when the football boot market is undergoing its most dramatic transformation in decades. The traditional model of lifetime endorsements with a single brand is being challenged by a new generation of players who view their off-pitch commercial activities as extensions of their personal brands.
-                    </p>
-
-                    <h2 class="text-xl font-bold mt-8 mb-4 text-white">A new era for endorsements</h2>
+                     <h2 class="text-xl font-bold mt-8 mb-4 text-white">A new era for endorsements</h2>
 
                     <p>
                         "This isn't just about one player leaving one brand," said football business analyst James Richardson. "This is about a fundamental shift in the power dynamics between athletes and sponsors. Players like Mbappe now have more leverage than ever before, and they're using it."
                     </p>
 
-                    <p>
-                        The implications extend far beyond just one deal. If Mbappe's move to a rival brand proves successful - both commercially and on the pitch - it could embolden other top players to make similar decisions. Lionel Messi's move from Adidas to a custom arrangement, and Cristiano Ronaldo's evolution with Nike, are both examples of how the landscape has already begun to shift.
-                    </p>
-
                     <h2 class="text-xl font-bold mt-8 mb-4 text-white">The commercial angle</h2>
 
                     <p>
-                        Industry sources suggest that Mbappe's next deal could be structured very differently from traditional boot endorsements. Rather than a simple sponsorship agreement, the player is reportedly looking for a partnership model that would give him equity in the brand's football division, along with creative control over his own signature line.
-                    </p>
-
-                    <p>
-                        "The old model was simple: a brand pays a player X amount, the player wears the boots and appears in advertisements," explained brand consultant Sarah Thompson. "The new model is much more complex. Players want ownership stakes, design input, and the ability to collaborate on product lines that reflect their personal brand."
-                    </p>
-
-                    <p>
-                        This approach mirrors trends seen in other sports, particularly basketball, where Michael Jordan's partnership with Nike created the Jordan Brand - now worth billions annually. While few expect any football deal to reach those heights, the principle of deeper commercial partnerships is clearly gaining traction.
+                        Industry sources suggest that Mbappe's next deal could be structured very differently from traditional boot endorsements.
                     </p>
 
                     <h2 class="text-xl font-bold mt-8 mb-4 text-white">Impact on the market</h2>
 
                     <p>
                         The boot industry itself is valued at approximately $8 billion globally, with Nike commanding roughly 27% market share. Adidas follows at around 22%, while Puma holds approximately 7%. A shift of Mbappe's stature could significantly impact these numbers.
-                    </p>
-
-                    <p>
-                        For Nike, the loss of Mbappe would represent another high-profile departure following years of dominating the football endorsement space. The brand still maintains relationships with some of the sport's biggest names, but the trend toward player-driven commercial arrangements is forcing a rethink of traditional strategies.
                     </p>
 
                     <p>
@@ -539,10 +604,10 @@
                 <div class="flex items-center gap-2">
                     <span class="text-xs text-goal-gray">Available on:</span>
                     <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
-                        <i class="fab fa-apple"></i> App Store & Play Store
+                         <i class="fa-brands fa-windows"></i>Window DeskTop
                     </a>
                     <a href="#" class="bg-goal-card px-3 py-1.5 rounded text-xs text-goal-gray hover:text-white transition flex items-center gap-1.5">
-                        <i class="fab fa-google-play"></i> Google Play
+                        <i class="fab fa-google-play"></i> chrome browser
                     </a>
                 </div>
             </div>
