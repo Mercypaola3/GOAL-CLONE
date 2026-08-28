@@ -29,7 +29,7 @@
 </head>
 <body class="bg-zinc-900 text-white font-body">
     <!-- Header -->
-    <header class="bg-black text-white">
+    <header class="bg-black text-white fixed left-0">
         <div class="container mx-auto px-0">
             <div class="flex items-center justify-between h-30">
                 <!-- Logo -->
@@ -341,11 +341,11 @@
 
                     <div class="max-w-[1600px] mx-auto px-12 py-12">
 
-                        <div class="grid grid-cols-3 gap-20">
+                        <div class="grid grid-cols-3 gap-2">
 
                             <!-- FOOTBALL NEWS -->
-                            <div>
-                                <h2 class="text-white text-2xl font-extrabold mb-8 border-b border-gray-700 pb-3">
+                            <div class="absolute  top-10">
+                                <h2 class="text-white text-2xl font-extrabold mb-4 border-b border-gray-700 pb-2" gap-3>
                                     Football News
                                 </h2>
 
@@ -413,7 +413,7 @@
                 <!-- ENTERTAINMENT -->
                 <div>
 
-                    <h2 class="text-white text-2xl font-extrabold mb-8 border-b border-gray-700 pb-3">
+                    <h2 class="text-white text-2xl font-extrabold mb-4 border-b border-gray-700 pb-2">
                         Entertainment
                     </h2>
 
@@ -543,7 +543,7 @@
     <!-- forums -->
     <a href="forums.html"class="px-3 py-2 uppercase text-base font-extrabold text-white hover:text-green-500 flex items-center gap-1">
         forums
-        <i class="fas fa-chevron-down text-[10px]"></i>
+
     </a>
                     <div class="relative group">
                         <!-- competitions -->
@@ -677,7 +677,7 @@
                             </button>
                         </div>
 
-                        <!-- Navigation Links -->
+                        <!-- Navigation mobile -->
                         <nav class="flex flex-col">
 
                             <a href="Goal.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
@@ -688,35 +688,35 @@
                                 Scores
                             </a>
 
-                            <a href="Latest News.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                            <a href="Latest News.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800 hover:text-green-500">
                                 Latest News
                             </a>
 
-                            <a href="forums.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                            <a href="forums.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800 hover:text-green-500">
                                 forums
                             </a>
 
-                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                            <a href="competitions.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800hover:text-green-500">
                                 competition
                             </a>
 
-                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800">
+                            <a href="Newsletters.html" class="px-5 py-4 upercase border-b border-gray-700 hover:bg-gray-800 hover:text-green-500">
                                 Newsletters
                             </a>
 
-                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800">
+                            <a href="Indivisa.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800 hover:text-green-500">
                                 indivisa
                             </a>
 
-                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800">
+                            <a href="GoalStudio.html" class="px-5 py-4 uppercaseborder-b border-gray-700 hover:bg-gray-800hover:text-green-500">
                                 goalstudio
                             </a>
 
-                            <a href="Shop.html" class="px-5 py-4 border-b border-gray-700 hover:bg-gray-800">
+                            <a href="Shop.html" class="px-5 uppercase py-4 border-b border-gray-700 hover:bg-gray-800hover:text-green-500">
                                 Shop
                             </a>
 
-                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800">
+                            <a href="article-details.html" class="px-5 py-4 uppercase border-b border-gray-700 hover:bg-gray-800 hover:text-green-500">
                                 article-detail
                             </a>
 
@@ -726,8 +726,7 @@
                     <!-- Overlay -->
                     <div
                         id="overlay"
-                        class="fixed inset-0 bg-black/50 hidden z-40"
-                    ></div>
+                        class="fixed inset-0 bg-black/50 hidden z-40"></div>
 
                     <script>
                         const mobileMenuBtn = document.getElementById("mobileMenuBtn");
@@ -854,7 +853,9 @@
                     <span class="w-1 h-5 bg-red-500 rounded-full inline-block"></span>
                     BREAKING NEWS
                 </h2>
-                <a href="latest-news.html" class="text-goal-green text-sm font-medium hover:underline">See all</a>
+                <a href="Latest News.html" class="text-goal-green text-sm font-medium hover:underline">
+                    <span class="text-goal-green text-sm font-medium hover:underline">see all</span>
+                </a>
             </div>
             <div class="bg-goal-card rounded-lg divide-y divide-goal-border">
                 <a href="article-details.html" class="flex items-start gap-3 p-4 hover:bg-white/5 transition group">
@@ -901,11 +902,12 @@
         </section>
         
         <section class="mb-8">
+            <a href="article-details.html" class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
             <!-- News Card Component -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
                 <!-- Image Wrapper -->
-                <div class="relative overflow-hidden h-48">
-                    <img src="image/images1.jpg" alt="News thumbnail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <div class="relative overflow-hidden h-49">
+                    <img src="image/images1.jpg" alt="News thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <!-- Category Badge -->
                     <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
                     Football
@@ -930,6 +932,8 @@
                     </div>
                 </div>
                 </div>
+
+                </a>              
     </section>
 
     <!-- Team Summaries Section -->
@@ -1011,8 +1015,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Video 1 -->
                 <a href="https://www.youtube.com/watch?v=VIDEO_ID"
-   target="_blank"
-   class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
+                target="_blank"
+                class="block bg-goal-card rounded-lg overflow-hidden group hover:ring-1 hover:ring-goal-green transition">
 
     <div class="aspect-video overflow-hidden relative">
         <img src="https://assets.goal.com/images/v3/bltd3e8f5ee7e071bbc/maxresdefault.jpg?auto=webp&format=pjpg"
